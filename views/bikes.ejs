@@ -1,0 +1,127 @@
+<html>
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="https://www.wpclipart.com/recreation/cycling/bicycles/plain_bicycle_icon_large.png">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
+    <style>
+        body {
+            padding: 0px;
+        }
+        
+         ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <!-- preload -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/loaders.min.css">
+    <link rel="stylesheet" href="./assets/css/bikes.css">
+    <script>
+        function show() {
+            alert("came");
+            document.getElementById("show").style.display = "";
+        }
+    </script>
+    <style>
+        #show {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <nav id="navi" style="width:100%">
+                <ul id="listul" style="text-align: center;">
+                    <li id="list">
+                        <div style="color:white;">
+                            Welcome <i class="fa fa-user" aria-hidden="true"></i>
+                            <%= sn%>
+                                <span class="caret"></span>
+                        </div>
+                    </li>
+                    <li id="list">
+                        <a href="/"><button class="btn btn-light">
+                                Home</button></a>
+                    </li>
+                    <li id="list">
+                        <a href="/logout"><button class="btn btn-light">
+                                <i class="fa fa-flag"></i> logout</li>
+                    </button></a>
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <br><br>
+    <div class="container">
+        <ul style="color: black" class="list-group">
+            <%var i=0;for (var bike in result){i=i+1%>
+                <div style="float: left;text-align: center;">
+                    <li style="text-align: start;color: #000;font-family: 'Lobster', cursive;font-size: 24px;" class="list-group-item">Bike
+                        <%=i%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                  font-size: 20px;"> Owner Name: </span>
+                        <%=result[bike].name%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                        font-size: 20px;"> Owner Phone:</span>
+                        <%=result[bike].phone%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                       font-size: 20px; "> Owner Location: </span>
+                        <%=result[bike].loc%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                       font-size: 20px; "> Cost Per hour: </span>
+                        <%=result[bike].c%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                       font-size: 20px; "> Pick Up Address: </span>
+                        <%=result[bike].add%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                       font-size: 20px; ">Bike Number:</span>
+                        <%=result[bike].bno%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                       font-size: 20px; "> Bike Model: </span>
+                        <%=result[bike].bname%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                       font-size: 20px; "> Bike CC:</span>
+                        <%=result[bike].bcc%>
+                    </li>
+                    <center>
+                        <li style="float: left;" class="list-group-item"><img src="./uploads/<%= result[bike].bikeloc[0].filename%>" style="height: 200px;width:328px;" alt=""></li>
+                        <li style="float: left;" class="list-group-item"><img src="./uploads/<%= result[bike].bikeloc[1].filename%>" style="height: 200px;width:328px;" alt=""></li>
+                        <li style="float: left;" class="list-group-item"><img src="./uploads/<%= result[bike].bikeloc[2].filename%>" style="height: 200px;width:328px;" alt=""></li>
+                    </center>
+                </div>
+                <br>
+                <hr>
+                <%}%>
+        </ul>
+    </div>
+
+
+    </div>
+</body>
+
+</html>

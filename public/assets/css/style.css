@@ -1,0 +1,984 @@
+/* RESET STYLES */
+
+*,
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #fff;
+    font-size: inherit;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+html,
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    width: 100%;
+    z-index: -1500;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin-top: 0;
+    font-weight: 700;
+}
+
+h1 {
+    margin-bottom: .8em;
+    line-height: 45px;
+}
+
+dl,
+h3,
+menu,
+ol,
+p,
+pre,
+ul {
+    margin: 1em 0;
+}
+
+a {
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:focus {
+    outline: none
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+button:focus {
+    outline: none
+}
+
+img {
+    max-width: 100%;
+    height: auto
+}
+
+.cf:before,
+.cf:after {
+    content: '';
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        font-size: 80%;
+    }
+}
+
+
+/* RESET */
+
+
+/* HEADER */
+
+header {
+    position: fixed;
+    height: 70px;
+    background-color: #000;
+    z-index: 999;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+    line-height: 50px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.nav-link {
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: #97d301;
+}
+
+.navbar-brand,
+.sm-brand {
+    width: 115px;
+    height: auto;
+    margin-right: 0;
+}
+
+.sm-brand {
+    display: none;
+}
+
+.sm-brand,
+.navbar-toggler {
+    margin-left: 4%;
+    margin-right: 4%;
+    z-index: 3;
+}
+
+.navbar-toggler {
+    position: relative;
+    top: -25px;
+    padding: 0;
+    font-size: inherit;
+}
+
+header:after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(151, 211, 1, .6);
+    z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0;
+    }
+    .sm-brand {
+        display: block;
+    }
+    .navbar-brand {
+        display: none;
+    }
+    .navbar-collapse {
+        position: absolute;
+        top: 70px;
+        width: 100%;
+    }
+    .navbar-nav {
+        background-color: #97d301;
+    }
+    .nav-link {
+        padding: 0;
+    }
+}
+
+
+/* HEADER */
+
+
+/* INTRO */
+
+.intro {
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    top: 0;
+    height: auto;
+    padding: 6rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://www.motorcycleisland.com/wp-content/uploads/2019/07/Indian-Scout-Bobber-Motorcycle-is-Slammed-Style-in-a-Sleek-Design.jpg");
+    background-position: center 0;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    z-index: 0;
+}
+
+.intro-content {
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 0;
+    z-index: 1;
+}
+
+.intro-subtitle {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    letter-spacing: 5px;
+}
+
+.intro-title {
+    margin-bottom: 0;
+    font-size: 5rem;
+    line-height: 60px;
+}
+
+.intro-box {
+    position: relative;
+    display: inline-block;
+    max-width: 26.5625rem;
+    margin: 0 2.5rem 1rem;
+    width: 15%;
+    padding: 0px;
+}
+
+.pink {
+    background-color: #746c70;
+}
+
+.lightblue {
+    background-color: #746c70;
+}
+
+.intro-box:before,
+.intro-box:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    z-index: 2;
+    -webkit-transition: 250ms linear;
+    -moz-transition: 250ms linear;
+    transition: 250ms linear;
+}
+
+.intro-box:before {
+    width: calc(100% + 8px);
+    -webkit-transform: translate(-4px, 0);
+    -moz-transform: translate(-4px, 0);
+    transform: translate(-4px, 0);
+}
+
+.intro-box:after {
+    height: calc(100% + 8px);
+    -webkit-transform: translate(0, -4px);
+    -moz-transform: translate(0, -4px);
+    transform: translate(0, -4px);
+}
+
+.intro-box-subtitle,
+.intro-box-title {
+    display: block;
+    line-height: 1.5;
+}
+
+.intro-box-title {
+    font-size: 2.5rem;
+}
+
+.intro-box:hover:after,
+.intro-box:hover:before {
+    width: calc(100%);
+    opacity: 0;
+}
+
+a.intro-box:hover .intro-box-title {
+    color: #000;
+}
+
+@media screen and (max-width: 1500px) {
+    .intro-title {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .intro-box {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .intro {
+        height: auto;
+        padding-top: 75px;
+        padding-bottom: 45px;
+    }
+    .intro-subtitle {
+        font-size: 1em;
+    }
+    .intro-title {
+        margin-bottom: 1rem;
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .intro-title {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* INTRO */
+
+
+/* TOURS */
+
+.tours {
+    position: relative;
+    height: 485px;
+    background-color: #97d301;
+    overflow: hidden;
+}
+
+.tours-text,
+.about-text {
+    display: block;
+    position: relative;
+    padding: 4rem 4%;
+    z-index: 3;
+}
+
+.tours-title,
+.about-title {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 3.5rem;
+}
+
+.tours-slider {
+    z-index: 2;
+    padding: 0;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 485px;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.tours-slider:before,
+.tours-slider:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 999;
+    width: 100%;
+    -webkit-transform: skew(-17deg, 0);
+    -moz-transform: skew(-17deg, 0);
+    transform: skew(-17deg, 0);
+    -webkit-transition: -webkit-transform .4s ease .15s;
+    -moz-transition: -moz-transform .4s ease .15s;
+    transition: transform .4s ease .15s;
+}
+
+.tours-slider:before {
+    left: calc(-90% + 5px);
+    border-right: 1px solid rgba(255, 255, 255, .7);
+}
+
+.tours-slider:after {
+    left: -90%;
+    background: #97d301;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    opacity: 1;
+}
+
+.carousel-control-prev {
+    left: 90px;
+}
+
+.carousel-control-next i,
+.carousel-control-prev i {
+    font-size: 7.5em;
+}
+
+.carousel-indicators {
+    left: 60%;
+}
+
+.carousel-indicators li {
+    width: 18px;
+    height: 20px;
+    border-radius: 44%;
+    margin-left: 12px;
+}
+
+.carousel-caption {
+    top: 35%;
+    left: 50%;
+    -webkit-transform: translate(-35%, 0);
+    -moz-transform: translate(-35%, 0);
+    transform: translate(-35%, 0);
+}
+
+.slide-title {
+    font-size: 4rem;
+    z-index: 2;
+}
+
+.slide-link {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    z-index: 2;
+    padding: .5rem;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+.slide-link:before,
+.slide-link:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    z-index: 2;
+    -webkit-transition: 250ms linear;
+    -moz-transition: 250ms linear;
+    transition: 250ms linear;
+}
+
+.slide-link:before {
+    width: calc(100% + 8px);
+    -webkit-transform: translate(-4px, 0);
+    -moz-transform: translate(-4px, 0);
+    transform: translate(-4px, 0);
+}
+
+.slide-link:after {
+    height: calc(100% + 8px);
+    -webkit-transform: translate(0, -4px);
+    -moz-transform: translate(0, -4px);
+    transform: translate(0, -4px);
+}
+
+.slide-link:hover:before,
+.slide-link:hover:after {
+    width: calc(100%);
+    opacity: 0;
+}
+
+.green {
+    background-color: #97d301;
+}
+
+.orange {
+    background-color: #fd6100;
+}
+
+@media screen and (max-width: 1400px) {
+    .tours-title,
+    .about-title {
+        font-size: 2.5rem;
+    }
+    .carousel-control-next i,
+    .carousel-control-prev i {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .about-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .carousel-caption {
+        top: 35%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tours,
+    .carousel-item {
+        height: 380px;
+    }
+    .tours-text {
+        display: none;
+    }
+    .tours-slider:before,
+    .tours-slider:after {
+        visibility: hidden;
+    }
+    .carousel-caption {
+        top: 30%;
+        -webkit-transform: translate(-50%, 0);
+        -moz-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+    }
+    .carousel-control-prev {
+        left: 0;
+    }
+    .carousel-indicators {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .carousel-caption {
+        top: 35%;
+        left: 0;
+        right: 0;
+        -webkit-transform: translate(0);
+        -moz-transform: translate(0);
+        transform: translate(0);
+    }
+    .slide-title {
+        font-size: 3rem;
+    }
+}
+
+
+/* TOURS */
+
+
+/* BIKES */
+
+.bikes {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.753), rgba(0, 0, 0, 0.705)), url("https://i.pinimg.com/originals/86/a6/94/86a694bcd3da2bc766fa578ca81dbdbc.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    background-attachment: fixed;
+}
+
+.bikes-title {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 3.5em;
+    line-height: 2rem;
+}
+
+.bikes-text {
+    padding: 0;
+}
+
+.bikes-link,
+.about-link {
+    position: absolute;
+    left: 50%;
+    padding: .5rem;
+    z-index: 2;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+.bikes-link:hover,
+.about-link:hover {
+    background-color: rgba(255, 255, 255, .7);
+}
+
+.bikes-link:before,
+.bikes-link:after,
+.about-link:before,
+.about-link:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    z-index: 2;
+    -webkit-transition: 250ms linear;
+    -moz-transition: 250ms linear;
+    transition: 250ms linear;
+}
+
+.bikes-link:before,
+.about-link:before {
+    width: calc(100% + 8px);
+    -webkit-transform: translate(-4px, 0);
+    -moz-transform: translate(-4px, 0);
+    transform: translate(-4px, 0);
+}
+
+.bikes-link:after,
+.about-link:after {
+    height: calc(100% + 8px);
+    -webkit-transform: translate(0, -4px);
+    -moz-transform: translate(0, -4px);
+    transform: translate(0, -4px);
+}
+
+.bikes-link:hover:before,
+.bikes-link:hover:after,
+.about-link:hover:before,
+.about-link:hover:after {
+    width: calc(100%);
+    opacity: 0;
+}
+
+@media screen and (max-width: 1400px) {
+    .bikes-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .bikes {
+        height: auto;
+        padding-top: 45px;
+    }
+    .bikes-title {
+        font-size: 25px;
+        line-height: 2rem;
+    }
+}
+
+
+/* BIKES */
+
+
+/* ABOUT */
+
+.about {
+    position: relative;
+    height: auto;
+    text-align: center;
+    padding: 0;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.507)), url('https://get.wallhere.com/photo/life-old-autumn-red-summer-wallpaper-Sun-India-white-plant-abstract-detail-macro-tree-fall-texture-net-nature-water-floral-up-leaves-rain-silhouette-collage-closeup-Canon-paper-dead-skeleton-botanical-fire-eos-leaf-spring-still-flora-pattern-slim-close-natural-bright-many-decorative-background-details-bangalore-dry-indoor-structure-foliage-burning-Moses-tropical-backdrop-vein-veins-dried-stillife-transparent-thin-dslr-karnataka-ornamental-burningbush-isolated-textured-digitalphotography-skeletonleaf-canoneos450d-bangalorephotographers-canoneosrebelxsi-rubenalexander-thewandererseye-1091639.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.about-img {
+    background-image: url('../img/about.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 380px;
+}
+
+.about-img:before,
+.about-img:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+    width: 100%;
+    -webkit-transform: skew(-17deg, 0);
+    -moz-transform: skew(-17deg, 0);
+    transform: skew(-17deg, 0);
+    -webkit-transition: -webkit-transform .4s ease .15s;
+    -moz-transition: -moz-transform .4s ease .15s;
+    transition: transform .4s ease .15s;
+}
+
+@media screen and (max-width: 768px) {
+    .about {
+        padding-top: 0px;
+    }
+    .about-title {
+        font-size: 25px;
+        line-height: 2rem;
+        text-align: center
+    }
+    .about-content {
+        text-align: center;
+    }
+    .about-img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .about-text {
+        padding-top: 0;
+    }
+    .about-content {
+        padding: 0 15px;
+    }
+}
+
+
+/* ABOUT */
+
+
+/* FOOTER */
+
+.footer {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #222;
+    padding-right: 4%;
+    padding-left: 4%;
+}
+
+.footer p,
+.footer a,
+.footer span,
+.footer i {
+    color: #a1a0a0;
+}
+
+.footer-logo p {
+    display: inline-block;
+}
+
+.footer-logo img {
+    width: 10%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.footer-copy {
+    font-size: 0.688em;
+}
+
+.footer-copy a {
+    border-bottom: 1px solid #d6d6d6;
+    color: #777;
+    padding-bottom: 0.5em;
+}
+
+.footer-copy span {
+    display: block;
+    padding-top: 0.5em;
+}
+
+.social-nav {
+    float: right;
+}
+
+.footer-social li {
+    display: inline-block;
+    width: 3rem;
+    border: 1px solid #d6d6d6;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.footer-social li>a>i {
+    line-height: 3rem;
+    vertical-align: middle;
+}
+
+.footer-social li:hover .fa-facebook:hover {
+    color: #3b5999;
+}
+
+.footer-social li:hover .fa-twitter:hover {
+    color: #55acee;
+}
+
+.footer-social li:hover .fa-google-plus:hover {
+    color: #da5333;
+}
+
+.footer-social li:hover .fa-youtube:hover {
+    color: #e52d27;
+}
+
+.footer-social li:hover .fa-pinterest-p:hover {
+    color: #910101;
+}
+
+@media screen and (max-width: 768px) {
+    .social-nav {
+        float: none;
+        text-align: center;
+    }
+    .footer-social {
+        position: relative;
+        top: -65px;
+    }
+    .footer-logo {
+        text-align: center;
+        position: relative;
+        top: 95px;
+    }
+    .footer-copy a {
+        display: none;
+    }
+    .footer-copy {
+        position: relative;
+        bottom: -30px;
+    }
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

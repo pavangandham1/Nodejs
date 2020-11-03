@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- <script>
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script> -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="./assets/js/main.js"></script> -->
+    <title>Bike Rental Portal</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+    <script src="http://imakewebthings.github.com/jquery-waypoints/waypoints.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js" integrity="sha256-w49DIDk8itgSjjuoof5lTxYKwcjWJ7Z2sRW3nU1StNA=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/css/bootstrap-toggle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.js" integrity="sha256-lZnJXv4iTfqLpnfAHnr1A6+LUpc8wHU33pwJYJhjQ6A=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,900">
+    <link rel="stylesheet" href="./assets/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="./assets/node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+         ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="intro container-fluid text-center">
+        <div class="intro-content">
+            <h3 class="intro-subtitle  animated">Want to rent your BIke? or Lend a bike?</h2>
+                <h4 class="intro-title  animated text-uppercase">You are in the right Place</h1>
+                    <p class="intro-subtitle  animated text-uppercase">First things First</p>
+                    <a class="intro-box pink fadeInDown animated" href="/register">
+
+                        <h2 class="intro-box-title text-uppercase">Sign Up</h2>
+                    </a>
+                    <a class="intro-box lightblue fadeInDown animated" href="/login">
+
+                        <h2 class="intro-box-title text-uppercase">Log In</h2>
+                    </a>
+                    <a class="intro-box lightblue fadeInDown animated" href="/dashboard">
+
+                        <h2 class="intro-box-title text-uppercase">HOME</h2>
+                    </a>
+        </div>
+    </section>
+    <section class="bikes container-fluid text-center">
+        <div class="row">
+            <div class="col-sm-12 bikes-text">
+                <h1 class="bikes-title text-uppercase">Why Rent</h1>
+                <div class="bikes-content">
+                    <p>Two-wheeler owner of India might not be using their bike as frequently as others for them this application helps to provide some work for the bike by giving their bike to others registered on the application so that both can be benefited</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="about container-fluid">
+        <div class="row">
+            <div class="col-lg-12 about-text">
+                <h1 class="about-title text-uppercase">About the Application</h1>
+                <div class="about-content">
+                    <article>
+                        <p>This Application is for the purpose of making people utilize their motorbike by renting to others for some money and even helping them for their respective purpose, This application provides a bridge between the owner and the person
+                            using the bike Commission and taxes will be calculated on a monthly bases.
+                        </p>
+                        <h3>Points to be Remembered <i style="color: red;" class="fa fa-warning"> </i> </h3>
+                        <ul>
+                            <li>
+                                People who Lend a bike need to make 25% payment as advance after using the bike remaining 75% payment is to be made.
+                            </li>
+                            <li>
+                                All transaction must be through the application wallet.
+
+                            </li>
+                            <li>
+                                All the prices will be decided by the owner.
+
+                            </li>
+                            <li>
+                                Happy Ride <i style=" color: yellow;" class="fas fa-smile-wink    "></i>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 footer-logo align-self-center">
+                <p>Website by</p>
+                <a href="#">
+                   Pavan Gandham
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-12 footer-copy text-center align-self-center">
+                <a href="#">Bike Rental System</a>
+                <span>Copyright © 2020</span>
+            </div>
+            <div class="col-lg-4 col-md-12 footer-social align-self-center">
+                <ul class="social-nav">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fa fa-youtube fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fa fa-pinterest-p fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

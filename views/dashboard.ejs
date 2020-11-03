@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <title>Dashboard</title>
+    <!-- reset css -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/css_reset.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/jquery.datetimepicker.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+    <!-- preload -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/loaders.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/index.css">
+    <style>
+         ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script>
+        function imgu() {
+            alert('form submited');
+            document.getElementById("form").submit();
+        }
+    </script>
+</head>
+
+<body class="">
+    <!-- MAIN -->
+    <div class="wheel-menu-wrap ">
+        <div class="container-fluid wheel-bg1">
+            <div class="col-md-12 ">
+                <div class="wheel-navigation">
+
+                    <nav id="dl-menu" style="width:100%">
+
+                        <ul style="text-align: center;" class="main-menu dl-menu">
+                            <li class="menu-item   current-menu-parent menu-item-has-children   active-color ">
+                                <a href="/">Home</a>
+                            </li>
+                            <li class="menu-item current-menu-parent menu-item-has-children  ">
+                                <a href="#">Your Bikes</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Rent a bike</a>
+                            </li>
+                            <li class="menu-item menu-item-has-children  ">
+                                <a href="#">Pages</a>
+                            </li>
+                            <li class="menu-item ">
+
+                                <div class="dropdown wheel-user-ico">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        Welcome <i class="fa fa-user" aria-hidden="true"></i> <%= sn%>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/logout"><i class="fa fa-flag"></i> Logout</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wheel-start">
+        <div class="container padd-lr0">
+            <div class="col-lg-6 col-lg-push-6 ">
+                <header class="wheel-header marg-lg-b100 marg-lg-t200  marg-md-b0 marg-md-t0">
+                    <h1>Rent A Bike </h1>
+                    <h2>Search - Select - Contact - Ride</h2>
+                </header>
+            </div>
+            <div class="col-lg-6 col-lg-pull-6  padd-lr0">
+                <div class="wheel-start-form">
+                    <form action="/rent" method="POST">
+
+                        <label for="input-val12"><span>Picking Up</span>
+                            <input name="pick" type="text" id='input-val12' placeholder="ZIP, City, Airport or Address"
+                                required>
+                        </label>
+                        <div class="clearfix">
+                            <div class="wheel-date">
+                                <span>Pickup Date</span>
+                                <label for="input-val13" class="fa fa-calendar">
+                                    <input class="datetimepicker" id='input-val13' type="text" value="29 Apr">
+                                </label>
+                            </div>
+                            <div class="wheel-date ">
+                                <span>Pickup time</span>
+                                <label for="input-val14" class="fa fa-clock-o">
+                                    <input class="timepicker" id='input-val14' type="text" value="18:00">
+                                </label>
+                            </div>
+                            <div class="wheel-date">
+                                <span>Return Date</span>
+                                <label for="input-val15" class="fa fa-calendar">
+                                    <input class="datetimepicker" id='input-val15' type="text" value="29 Apr">
+                                </label>
+                            </div>
+                            <div class="wheel-date">
+                                <span>Return Time</span>
+                                <label for="input-val16" class="fa fa-clock-o">
+                                    <input class="timepicker" id='input-val16' type="text" value="18:00">
+                                </label>
+                            </div>
+                            <div class="wheel-date">
+                                <span>Driver’s Age</span>
+                                <select class="selectpicker">
+                                    <option>21</option>
+                                    <option>22</option>
+                                    <option>23</option>
+                                    <option>24</option>
+                                    <option>25</option>
+                                    <option>26</option>
+                                    <option>27</option>
+                                    <option>28</option>
+                                    <option>29</option>
+                                    <option>30</option>
+                                    <option>31</option>
+                                    <option>32</option>
+                                    <option>33</option>
+                                    <option>34</option>
+                                    <option>35</option>
+                                    <option>36</option>
+                                    <option>37</option>
+                                    <option>38</option>
+                                    <option>39</option>
+                                    <option>40</option>
+                                    <option>41</option>
+                                    <option>42</option>
+                                    <option>43</option>
+                                    <option>44</option>
+                                    <option>45</option>
+                                    <option>46</option>
+                                    <option>47</option>
+                                    <option>48</option>
+                                    <option>49</option>
+                                    <option>50</option>
+                                </select>
+                            </div>
+                            <label for="input-val18" class="promo promo2">
+                                <input type="submit">
+                            </label>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////// -->
+    <div class="wheel-start">
+        <img src="https://i.pinimg.com/originals/81/1b/7a/811b7a81cf903e78f871b407acc5ccb9.jpg" alt="" class="wheel-img">
+        <div class="container padd-lr0">
+            <div class="col-lg-6 col-lg-push-6 ">
+                <header class="wheel-header marg-lg-b100 marg-lg-t200  marg-md-b0 marg-md-t0">
+                    <h1>Lend A Bike</h1>
+                    <h2>Upload - Share - Lend - Earn</h2>
+                </header>
+            </div>
+            <div class="col-lg-6 col-lg-pull-6  padd-lr0">
+                <div class="wheel-start-form">
+
+                    <br>
+                    <form id="form" action="/lend" method="POST">
+                        <label><span>Picking Point</span>
+                            <input type="text" name="loc" id='input-val12' placeholder="ZIP, City,or Address" required>
+                        </label>
+                        <div class="clearfix">
+                            <div class="wheel-date">
+                                <span>Available On</span>
+                                <label class="fa fa-calendar">
+                                    <input name="datea" class="datetimepicker" id='input-val13' type="text"
+                                        value="29 Apr">
+                                </label>
+                            </div>
+
+                            <div class="wheel-date">
+                                <span>Avalable Till</span>
+                                <label class="fa fa-calendar">
+                                    <input name="dateb" class="datetimepicker" id='input-val15' type="text"
+                                        value="29 Apr">
+                                </label>
+                            </div>
+
+                            <div class="wheel-date">
+                                <span>Cost per 1hr</span>
+                                <label>
+                                    <input name="cost" type="number" required>
+                                </label>
+                            </div>
+                            <div class="wheel-date">
+                                <span>Bike Model</span>
+                                <label>
+                                    <input name="bname" type="text" required>
+                                </label>
+                            </div>
+                            <div class="wheel-date">
+                                <span>Bike CC</span>
+                                <label>
+                                    <input name="bcc" type="number" required>
+                                </label>
+                            </div>
+                            <div class="wheel-date">
+                                <span>Resident</span>
+                                <input type="text" name="add" placeholder="Address" value="Home">
+                            </div>
+                            <div class="wheel-date">
+                                <span>Bike NO</span>
+                                <input type="text" name="bn" placeholder="Address" value="TS-16-4007">
+                            </div>
+                        </div>
+                        <label for="input-val18" class="promo promo2">
+                            <input type="submit" id="textf" value="submit">
+                        </label>
+                    </form>
+                    <br>
+                    <form action="/lend2" method="POST" enctype="multipart/form-data">
+                        <div class="custom-file mb-3">
+                            <label>Bike Pictures 1<input type="file" name="pic" id="fil" placeholder="upload image"
+                                    class="custom-file-input" multiple></label>
+                        </div>
+                        <label class="promo promo2">
+                            <input type="submit" id="img" value="submit">
+                        </label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- /////////////////////////////////////////////////// -->
+    <div class="container-fluid" style="background: #000;">
+        <div class="row" style="background: #000;">
+            <div class="col-xs-12">
+                <div class="wheel-header wheel-testi-header text-center marg-lg-t155 marg-lg-b65 marg-md-t50  marg-md-b50">
+                    <h3>Our Mission is to <span>UTILIZE</span> bikes properly</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="background: #000;">
+            <div class="col-xs-12">
+                <div class="wheel-testimonial text-center">
+                    <p>This Application is for the purpose of making people utilize their motorbike by renting to others for some money and even helping them for their respective purpose, This application provides a bridge between the owner and the person
+                        using the bike Commission and taxes will be calculated on a monthly bases.</p>
+                    <div class="wheel-testimonial-info">
+                        <span style="color:white;font-size: 52px;">Pavan Gandham</span>
+                        <!-- <img src="./assets/img/shivac.png" alt=""> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <!-- ///////////////// -->
+    <footer class="footer container-fluid" style="background: black;">
+        <div class="row" style="padding:30px">
+            <hr width="90%">
+            <div style="text-align: center;" class="col-md-12 footer-logo align-self-center">
+                <h3 style="font-family: montserrat;color: blanchedalmond;">Website by</h3>
+                <a href="#">
+                    Pavan Gandham
+                </a>
+                <span style="color:white">Copyright © 2020</span>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Scripts project -->
+    <script type="text/javascript" src="./assets/js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+    <!-- count -->
+    <script type="text/javascript" src='./assets/js/jquery.countTo.js'></script>
+    <!-- google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt5tJTim4lOO3ojbGARhPd1Z3O3CnE-C8" type="text/javascript"></script>
+    <!-- swiper -->
+    <script type="text/javascript" src="./assets/js/idangerous.swiper.min.js"></script>
+    <script type="text/javascript" src="./assets/js/equalHeightsPlugin.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.datetimepicker.full.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="./assets/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="./assets/js/index.js"></script>
+    <!-- sixth block end -->
+</body>
+
+</html>
