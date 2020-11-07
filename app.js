@@ -248,7 +248,7 @@ app.post('/adminUser', function(req, res) {
 })
 app.post('/admin', function(req, res) {
     var { radio, pass } = req.body;
-    if (pass == "shiva") {
+    if (pass == "admin") {
         if (radio == "User") {
             console.log("Users");
             MongoClient.connect(url, function(err, db) {
@@ -304,7 +304,7 @@ app.post('/delete', function(req, res) {
         });
     });
 });
-app.get("/profile", function(req, res) {
+app.get('/profile', function(req, res) {
     sess = req.session;
     if (!sess.name) {
         res.redirect('/login');
@@ -328,29 +328,42 @@ app.get("/profile", function(req, res) {
     });
 })
 app.post('/edo', function(req, res) {
-    console.log(req.body);
     sess = req.session;
+    var name = sess.name;
+    var sphone = sess.phone;
+    console.log(req.body);
     if (!sess.name) {
         res.redirect('/login');
     }
-    var name = sess.name;
-    var phone = sess.phone;
-    MongoClient.connect(url, function(err, db) {
+    var upass = req.body.password;
+    var del = req.body.deleteacc;
+    MongoClient.connect(url, function(err, dbb) {
         if (err) throw err;
-        var dbo = db.db("Project");
-        var q = { name: name, phone: phone }
-        var newvalues = { $set: { name: "Mickey", address: "Canyon 123" } };
-        dbo.collection("Users").updateOne(q, newvalues, function(err, result) {
+        var dbo = dbb.db("Project");
+        var q = { name: name, phone: sphone }
+        if (upass != "") {
+            console.log("pass");
+            var newvalues = { $set: { password: upass } };
+            dbo.collection("Users").updateMany(q, newvalues, function(err, result) {
+                if (err) throw err;
+
+            });
+        }
+        dbb.close();
+    });
+    if (del != "") {
+        MongoClient.connect(url, function(err, db) {
             if (err) throw err;
-            db.close();
-            res.render('profile', {
-                sn,
-                phone,
-                email,
-                result
+            var dbo = db.db("Project");
+            var q = { name: name, phone: sphone }
+            dbo.collection("Users").deleteOne(q, function(err, result) {
+                if (err) throw err;
+                db.close();
+                res.render("</h1>deleted</h1>")
             });
         });
-    });
-})
+    }
+    res.render('welcome')
+});
 app.listen(5000);
 console.log("server started at port 5000")
