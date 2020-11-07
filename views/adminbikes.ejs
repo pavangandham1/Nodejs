@@ -1,0 +1,130 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <title>Admin</title>
+    <!-- reset css -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/css_reset.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/jquery.datetimepicker.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+    <!-- preload -->
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <style>
+         ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./assets/css/admin.css">
+
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <div class="page-header">
+                <h2 id="head">Bikes Details</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <ul style="color: black" class="list-group">
+            <%var i=0;for (var bike in result){i=i+1%>
+                <div style="float: left;text-align: center;">
+                    <li style="text-align: start;color: #000;font-family: 'Lobster', cursive;font-size: 24px;" class="list-group-item">Bike
+                        <%=i%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                  font-size: 20px;"> Owner Name: </span>
+                        <%=result[bike].name%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                        font-size: 20px;"> Owner Phone:</span>
+                        <%=result[bike].phone%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                       font-size: 20px; "> Owner Location: </span>
+                        <%=result[bike].loc%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                       font-size: 20px; "> Cost Per hour: </span>
+                        <%=result[bike].c%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                       font-size: 20px; "> Pick Up Address: </span>
+                        <%=result[bike].add%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                       font-size: 20px; ">Bike Number:</span>
+                        <%=result[bike].bno%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                       font-size: 20px; "> Bike Model: </span>
+                        <%=result[bike].bname%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="font-family: 'McLaren', cursive;
+                       font-size: 20px; "> Bike CC:</span>
+                        <%=result[bike].bcc%>
+                    </li>
+                    <center>
+                        <li style="float: left;" class="list-group-item"><img src="./uploads/<%= result[bike].bikeloc[0].filename%>" style="height: 200px;width:328px;" alt=""></li>
+                        <li style="float: left;" class="list-group-item"><img src="./uploads/<%= result[bike].bikeloc[1].filename%>" style="height: 200px;width:328px;" alt=""></li>
+                        <li style="float: left;" class="list-group-item"><img src="./uploads/<%= result[bike].bikeloc[2].filename%>" style="height: 200px;width:328px;" alt=""></li>
+                    </center>
+                    <style>
+                        .button1 {
+                            position: relative;
+                            top: 10px;
+                            display: inline-block;
+                            padding: 0.35em 1.2em;
+                            border: 0.1em solid #FFFFFF;
+                            margin: 0 0.3em 0.3em 0;
+                            border-radius: 0.12em;
+                            box-sizing: border-box;
+                            text-decoration: none;
+                            font-family: 'Roboto', sans-serif;
+                            font-weight: 300;
+                            color: #000000;
+                            text-align: center;
+                            transition: all 0.2s;
+                        }
+                        
+                        .button1:hover {
+                            color: #ffffff;
+                            background-color: #ffffff00;
+                        }
+                        
+                        @media all and (max-width:30em) {
+                            .button1 {
+                                display: block;
+                                margin: 0.4em auto;
+                            }
+                        }
+                    </style>
+                    <li>
+                        <form action="/delete" method="POST" style="margin:20px;">
+                            <input type="hidden" name="id" value="<%=result[bike].random%>">
+                            <input type="submit" class="button1" value="Delete">
+                        </form>
+
+                    </li>
+                </div>
+                <br>
+                <%}%>
+        </ul>
+    </div>
+
+
+    </div>
+</body>

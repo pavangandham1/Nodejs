@@ -1,0 +1,72 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <title>Admin</title>
+    <!-- reset css -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/css_reset.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/jquery.datetimepicker.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+    <!-- preload -->
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <style>
+         ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./assets/css/admin.css">
+
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <div class="page-header">
+                <h2 id="head">User Details</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <ul style="color: black" class="list-group">
+            <%var i=0;for (var bike in result){i=i+1%>
+                <div style="text-align: center;font-weight: 400;">
+                    <li class="list-group-item">
+                        <h2>User
+                            <%=i%>
+                        </h2>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="
+                  font-size: 20px;">  Name: </span>
+                        <%=result[bike].name%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="
+                        font-size: 20px;">  Phone:</span>
+                        <%=result[bike].phone%>
+                    </li>
+
+                    <li class="list-group-item">
+                        <span style="
+                       font-size: 20px; ">Email  :</span>
+                        <%=result[bike].email%>
+                    </li>
+                    <li class="list-group-item">
+                        <span style="
+                       font-size: 20px; ">  password:</span>
+                        <%=result[bike].password%>
+                    </li>
+                    <li>
+
+                    </li>
+                </div>
+                <br>
+                <hr>
+                <%}%>
+        </ul>
+    </div>
+</body>

@@ -1,0 +1,53 @@
+body {
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_960_720.png");
+}
+
+h1 {
+    font-family: Cabin, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 100px;
+}
+
+#head {
+    text-align: center;
+    font-family: Cabin, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 50px;
+}
+
+#text {
+    min-width: 200px;
+    border-color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+    top: 10px;
+    height: 3rem;
+}
+
+::placeholder {
+    text-align: center;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+#button {
+    display: none;
+    border-radius: 10px;
+    top: 10px;
+    position: relative;
+}
+
+#content {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

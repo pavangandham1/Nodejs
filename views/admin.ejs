@@ -1,1 +1,39 @@
-<a href="/">Home</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <title>Admin</title>
+    <!-- reset css -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/css_reset.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/jquery.datetimepicker.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+    <!-- preload -->
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <style>
+         ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./assets/css/admin.css">
+
+</head>
+
+<body>
+    <div id="main" class="container">
+        <div class="col-lg-8 mx-auto" id="content">
+            <h1 class="brand-heading">ADMIN</h1>
+            <form action="/admin" method="post">
+                <div style="color: white;">
+                    <input type="radio" class="form-check-input" name="radio" id="1" value="Bikes" required> Bikes
+                    <input type="radio" class="form-check-input" name="radio" id="2" value="User"> Users <br>
+                </div>
+                <input id="text" type="password" name="pass" id="pass" placeholder="password">
+                <input id="button" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>

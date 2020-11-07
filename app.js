@@ -10,6 +10,8 @@ var MongoClient = require('mongodb').MongoClient;
 var multer = require('multer');
 var url = "mongodb://localhost:27017/";
 var formdata = require('form-data');
+const { render } = require('ejs');
+const { query } = require('express');
 app.use(session({
     secret: 'ssshhhhh',
     saveUninitialized: true,
@@ -76,7 +78,6 @@ app.post('/login', function(req, res) {
 app.get('/dashboard', nologin, function(req, res) {
     res.render('dashboard');
 });
-
 app.post('/register', function(req, res) {
     var { name, email, phone, password, confirmpassword } = req.body;
     let error = []
@@ -157,7 +158,8 @@ app.post('/lend', function(req, res) {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("Project");
-        var myobj = { name, phone, loc, c, bcc, bname, add, bno, bikeloc };
+        var random = '"' + Math.round(Math.random() * Math.floor(100)) + '"';
+        var myobj = { random, name, phone, loc, c, bcc, bname, add, bno, bikeloc };
 
         dbo.collection("Bikes").insertOne(myobj, function(err, res) {
             if (err) throw err;
@@ -222,4 +224,133 @@ app.post('/rent', function(req, res, err) {
 app.get('/admin', function(req, res) {
     res.render('admin');
 });
+app.post('/adminUser', function(req, res) {
+    var { radio, pass } = req.body;
+    if (pass == "shiva") {
+        if (radio == "User") {
+
+            MongoClient.connect(url, function(err, db) {
+                if (err) throw err;
+                var dbo = db.db("Project");
+
+                dbo.collection("Users").find().toArray(function(err, results) {
+                    if (err) throw err;
+                    var bikes = results;
+                    console.log(bikes);
+                    db.close();
+                    res.render('adminUser', { result: results });
+                });
+            });
+        }
+    } else {
+        res.redirect('admin')
+    }
+})
+app.post('/admin', function(req, res) {
+    var { radio, pass } = req.body;
+    if (pass == "shiva") {
+        if (radio == "User") {
+            console.log("Users");
+            MongoClient.connect(url, function(err, db) {
+                if (err) throw err;
+                var dbo = db.db("Project");
+
+                dbo.collection("Users").find().toArray(function(err, results) {
+                    if (err) throw err;
+                    var bikes = results;
+                    console.log(bikes);
+                    db.close();
+                    res.render('adminUser', { result: results });
+                });
+            });
+        }
+        if (radio == "Bikes") {
+            console.log("Bikes");
+
+            MongoClient.connect(url, function(err, db) {
+                if (err) throw err;
+                var dbo = db.db("Project");
+
+                dbo.collection("Bikes").find().toArray(function(err, results) {
+                    if (err) throw err;
+                    var bikes = results;
+                    console.log(bikes);
+                    db.close();
+                    res.render('adminbikes', { result: results });
+                });
+            });
+        }
+    } else {
+        res.redirect('admin')
+    }
+})
+app.post('/delete', function(req, res) {
+    console.log(req.body.id);
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("Project");
+        var myquery = { random: req.body.id };
+        dbo.collection("Bikes").deleteOne(myquery, function(err, obj) {
+            if (err) throw err;
+            console.log("1 document deleted");
+            db.close();
+        });
+        dbo.collection("Bikes").find().toArray(function(err, results) {
+            if (err) throw err;
+            var bikes = results;
+            console.log(bikes);
+            db.close();
+            res.render('adminbikes', { result: results });
+        });
+    });
+});
+app.get("/profile", function(req, res) {
+    sess = req.session;
+    if (!sess.name) {
+        res.redirect('/login');
+    }
+    var name = sess.name;
+    var phone = sess.phone;
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("Project");
+        var q = { name: name, phone: phone }
+        dbo.collection("Users").findOne(q, function(err, result) {
+            if (err) throw err;
+            db.close();
+            res.render('profile', {
+                sn,
+                phone,
+                email,
+                result
+            });
+        });
+    });
+})
+app.post('/edo', function(req, res) {
+    console.log(req.body);
+    sess = req.session;
+    if (!sess.name) {
+        res.redirect('/login');
+    }
+    var name = sess.name;
+    var phone = sess.phone;
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("Project");
+        var q = { name: name, phone: phone }
+        var newvalues = { $set: { name: "Mickey", address: "Canyon 123" } };
+        dbo.collection("Users").updateOne(q, newvalues, function(err, result) {
+            if (err) throw err;
+            db.close();
+            res.render('profile', {
+                sn,
+                phone,
+                email,
+                result
+            });
+        });
+    });
+})
 app.listen(5000);
+console.log("server started at port 5000")

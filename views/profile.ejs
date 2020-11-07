@@ -1,0 +1,145 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <title>Profile</title>
+    <!-- reset css -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/css_reset.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/jquery.datetimepicker.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+    <!-- preload -->
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <style>
+         ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <style>
+        #name {
+            display: none;
+        }
+        
+        #phone {
+            display: none;
+        }
+        
+        #email {
+            display: none;
+        }
+        
+        #pass {
+            display: none;
+        }
+    </style>
+    <script>
+        function set() {
+
+            document.getElementById("5").value = "";
+            document.getElementById("6").value = "";
+            document.getElementById("7").value = "";
+        }
+
+        function reveal() {
+
+            if (document.getElementById("1").checked) {
+                set()
+                document.getElementById("name").style.display = "block";
+            } else {
+                document.getElementById("name").style.display = "none";
+            }
+            if (document.getElementById("2").checked) {
+                set()
+                document.getElementById("phone").style.display = "block";
+            } else {
+                document.getElementById("phone").style.display = "none";
+            }
+
+            if (document.getElementById("4").checked) {
+                set()
+                document.getElementById("pass").style.display = "block";
+            } else {
+                document.getElementById("pass").style.display = "none";
+            }
+        }
+
+        function uncheck() {
+            document.getElementById("1").checked = false
+            document.getElementById("2").checked = false
+
+            document.getElementById("4").checked = false
+            reveal()
+        }
+    </script>
+    <link rel="stylesheet" href="./assets/css/admin.css">
+
+</head>
+
+<body onload="set()">
+    <div>
+        <div class="container">
+            <div class="page-header">
+                <h2 id="head">User :-
+                    <%= sn%>
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <ul style="color: black" class="list-group">
+
+            <div style="text-align: center;font-weight: 400;">
+                <li class="list-group-item">
+                    <span style="font-weight: 500;font-size: large;">Name:-</span>
+                    <%= sn%>
+                </li>
+                <li class="list-group-item">
+                    <span style="font-weight: 500;font-size: large;">Phone:-</span>
+                    <%= result.phone%>
+                </li>
+                <li class="list-group-item">
+                    <span style="font-weight: 500;font-size: large;">Email:-</span>
+                    <%= result.email%>
+                </li>
+                <li class="list-group-item">
+                    <span style="font-weight: 500;font-size: large;">Password:-</span>
+                    <%= result.password%>
+                </li>
+            </div>
+            <br>
+            <hr>
+
+        </ul>
+        <ul style="color: black" class="list-group">
+            <li style="background: transparent;color: white;text-align: center; border: transparent;" class="list-group-item">
+                <h2>Update Details
+                </h2>
+            </li>
+            <div style="color: white; text-align: center;">
+                <input type="radio" onchange="reveal()" class="form-check-input" name="name" id="1" value="Bikes"> Name
+                <input type="radio" onchange="reveal()" class="form-check-input" name="phone" id="2" value="User"> Phone
+                <input type="radio" onchange="reveal()" class="form-check-input" name="pass" id="4" value="User"> pass
+                <input type="radio" onchange="uncheck()" class="form-check-input" name="pass" id="4" value="User"> uncheck all
+            </div>
+            <form style="text-align: center;" action="/edo" method="POST" autocomplete="off">
+                <div style="text-align: center;font-weight: 400;">
+                    <li style="background: transparent;color: black;text-align: center; border: transparent;" id="name" class="list-group-item">
+                        <input id="5" type="text" name="name" placeholder="Name" value="">
+                    </li>
+                    <li style="background: transparent;color: black;text-align: center; border: transparent;" id="phone" class="list-group-item">
+                        <input id="6" type="phone" name="phone" placeholder="Phone" value="" writeonly onfocus="this.removeAttribute('readonly');">
+                    </li>
+                    <li style="background: transparent;color: black;text-align: center; border: transparent;" id="pass" class="list-group-item">
+                        <input id="7" type="password" name="passoword" placeholder="password" value="" writeonly>
+                    </li>
+                </div>
+                <input style="position: relative;top:10px" type="submit" value="Change">
+            </form>
+        </ul>
+    </div>
+
+
+    </div>
+</body>
